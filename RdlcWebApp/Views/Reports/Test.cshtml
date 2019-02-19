@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts {
+    <script type="text/javascript">
+        $(function () {            
+            var id = "5";
+            $("#btn[value=Preview]").click(function (event) {               
+                window.open('/Reports/RPTTestReport/' + id, "Test Report", 'unadorned:yes;resizable:1; dialogHeight:550px;dialogwidth:1100px;scroll:no;status=no; font-size:14px;center:yes');
+                return false;
+            });
+
+        });
+    </script>
+}
+<h2>View</h2>
+
+<div class="panel panel-info">
+    <div class="panel-heading">Bill Report</div>
+    <div class="panel-body">        
+        @using (Html.BeginForm("Index", "Reports", FormMethod.Post, new { @class = "form-inline" }))
+        {          
+            
+            <button class="btn btn-info" type="submit" value="Preview" id="btn">Preview</button>
+        }
+    </div>
+</div>
+

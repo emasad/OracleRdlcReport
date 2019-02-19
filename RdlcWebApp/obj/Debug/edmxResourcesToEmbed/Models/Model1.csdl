@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BRANCHINFO">
+    <Key>
+      <PropertyRef Name="BRC" />
+    </Key>
+    <Property Name="GMOID" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="GMOCODE" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="POROPREFIX" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PORONAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CORP" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BRC" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BRNAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_CODE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="DISTRICT_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ROUTINGNO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="GMONAME" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="POROCODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BRLOCATION" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SBL_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRYCODE" />
+    </Key>
+    <Property Name="COUNTRYCODE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ISO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRYNAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="NICENAME" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ISO3" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="NUMCODE" Type="Int32" />
+    <Property Name="PHONECODE" Type="Int16" />
+  </EntityType>
+  <EntityType Name="SBL_DESIGINFO">
+    <Key>
+      <PropertyRef Name="DESCODE" />
+    </Key>
+    <Property Name="DESCODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DESSHORTNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DESTYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COMMENTS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ENTRYID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ENTRYDATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="SBL_INDX_MOBILE">
+    <Key>
+      <PropertyRef Name="INDEXNO" />
+    </Key>
+    <Property Name="INDEXNO" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MOBILENO" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="USERINFORMATION">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="INDEXNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ROLESID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LASTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIVATIONCODE" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="BRCODE" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="VERIFICATIONKEY" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="SECURITYSTAMP" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRYCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DESIGNATIONID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRACTNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="SMARTID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="EMPPICPATH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SIGNATUREPATH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BIOMETRICAUTH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" />
+    <Property Name="ISACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="APPROVEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="APPROVEDATE" Type="DateTime" />
+    <Property Name="DELETEBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DELETEDATE" Type="DateTime" />
+    <Property Name="MODIFYBY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFYDATE" Type="DateTime" />
+    <Property Name="EMAILCONFIRM" Type="Int16" />
+    <NavigationProperty Name="USERROLEs" Relationship="Self.USERBYROLE" FromRole="USERINFORMATION" ToRole="USERROLE" />
+  </EntityType>
+  <EntityType Name="USERROLE">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="ROLEID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROLENAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ISACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="USERINFORMATIONs" Relationship="Self.USERBYROLE" FromRole="USERROLE" ToRole="USERINFORMATION" />
+  </EntityType>
+  <Association Name="USERBYROLE">
+    <End Role="USERROLE" Type="Self.USERROLE" Multiplicity="*" />
+    <End Role="USERINFORMATION" Type="Self.USERINFORMATION" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BRANCHINFOes" EntityType="Self.BRANCHINFO" />
+    <EntitySet Name="SBL_COUNTRY" EntityType="Self.SBL_COUNTRY" />
+    <EntitySet Name="SBL_DESIGINFO" EntityType="Self.SBL_DESIGINFO" />
+    <EntitySet Name="SBL_INDX_MOBILE" EntityType="Self.SBL_INDX_MOBILE" />
+    <EntitySet Name="USERINFORMATIONs" EntityType="Self.USERINFORMATION" />
+    <EntitySet Name="USERROLEs" EntityType="Self.USERROLE" />
+    <AssociationSet Name="USERBYROLE" Association="Self.USERBYROLE">
+      <End Role="USERROLE" EntitySet="USERROLEs" />
+      <End Role="USERINFORMATION" EntitySet="USERINFORMATIONs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

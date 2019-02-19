@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="BRANCHINFOes">
+      <EntityTypeMapping TypeName="Model.BRANCHINFO">
+        <MappingFragment StoreEntitySet="BRANCHINFO">
+          <ScalarProperty Name="GMOID" ColumnName="GMOID" />
+          <ScalarProperty Name="GMOCODE" ColumnName="GMOCODE" />
+          <ScalarProperty Name="POROPREFIX" ColumnName="POROPREFIX" />
+          <ScalarProperty Name="PORONAME" ColumnName="PORONAME" />
+          <ScalarProperty Name="CORP" ColumnName="CORP" />
+          <ScalarProperty Name="BRC" ColumnName="BRC" />
+          <ScalarProperty Name="BRNAME" ColumnName="BRNAME" />
+          <ScalarProperty Name="DISTRICT_CODE" ColumnName="DISTRICT_CODE" />
+          <ScalarProperty Name="DISTRICT_NAME" ColumnName="DISTRICT_NAME" />
+          <ScalarProperty Name="ROUTINGNO" ColumnName="ROUTINGNO" />
+          <ScalarProperty Name="GMONAME" ColumnName="GMONAME" />
+          <ScalarProperty Name="POROCODE" ColumnName="POROCODE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="BRLOCATION" ColumnName="BRLOCATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SBL_COUNTRY">
+      <EntityTypeMapping TypeName="Model.SBL_COUNTRY">
+        <MappingFragment StoreEntitySet="SBL_COUNTRY">
+          <ScalarProperty Name="COUNTRYCODE" ColumnName="COUNTRYCODE" />
+          <ScalarProperty Name="ISO" ColumnName="ISO" />
+          <ScalarProperty Name="COUNTRYNAME" ColumnName="COUNTRYNAME" />
+          <ScalarProperty Name="NICENAME" ColumnName="NICENAME" />
+          <ScalarProperty Name="ISO3" ColumnName="ISO3" />
+          <ScalarProperty Name="NUMCODE" ColumnName="NUMCODE" />
+          <ScalarProperty Name="PHONECODE" ColumnName="PHONECODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SBL_DESIGINFO">
+      <EntityTypeMapping TypeName="Model.SBL_DESIGINFO">
+        <MappingFragment StoreEntitySet="SBL_DESIGINFO">
+          <ScalarProperty Name="DESCODE" ColumnName="DESCODE" />
+          <ScalarProperty Name="DESNAME" ColumnName="DESNAME" />
+          <ScalarProperty Name="DESSHORTNAME" ColumnName="DESSHORTNAME" />
+          <ScalarProperty Name="DESTYPE" ColumnName="DESTYPE" />
+          <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ENTRYID" ColumnName="ENTRYID" />
+          <ScalarProperty Name="ENTRYDATE" ColumnName="ENTRYDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SBL_INDX_MOBILE">
+      <EntityTypeMapping TypeName="Model.SBL_INDX_MOBILE">
+        <MappingFragment StoreEntitySet="SBL_INDX_MOBILE">
+          <ScalarProperty Name="INDEXNO" ColumnName="INDEXNO" />
+          <ScalarProperty Name="MOBILENO" ColumnName="MOBILENO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERINFORMATIONs">
+      <EntityTypeMapping TypeName="Model.USERINFORMATION">
+        <MappingFragment StoreEntitySet="USERINFORMATION">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="INDEXNO" ColumnName="INDEXNO" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ROLESID" ColumnName="ROLESID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ACTIVATIONCODE" ColumnName="ACTIVATIONCODE" />
+          <ScalarProperty Name="BRCODE" ColumnName="BRCODE" />
+          <ScalarProperty Name="VERIFICATIONKEY" ColumnName="VERIFICATIONKEY" />
+          <ScalarProperty Name="SECURITYSTAMP" ColumnName="SECURITYSTAMP" />
+          <ScalarProperty Name="COUNTRYCODE" ColumnName="COUNTRYCODE" />
+          <ScalarProperty Name="DESIGNATIONID" ColumnName="DESIGNATIONID" />
+          <ScalarProperty Name="CONTRACTNO" ColumnName="CONTRACTNO" />
+          <ScalarProperty Name="NID" ColumnName="NID" />
+          <ScalarProperty Name="SMARTID" ColumnName="SMARTID" />
+          <ScalarProperty Name="EMPPICPATH" ColumnName="EMPPICPATH" />
+          <ScalarProperty Name="SIGNATUREPATH" ColumnName="SIGNATUREPATH" />
+          <ScalarProperty Name="BIOMETRICAUTH" ColumnName="BIOMETRICAUTH" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="APPROVEBY" ColumnName="APPROVEBY" />
+          <ScalarProperty Name="APPROVEDATE" ColumnName="APPROVEDATE" />
+          <ScalarProperty Name="DELETEBY" ColumnName="DELETEBY" />
+          <ScalarProperty Name="DELETEDATE" ColumnName="DELETEDATE" />
+          <ScalarProperty Name="MODIFYBY" ColumnName="MODIFYBY" />
+          <ScalarProperty Name="MODIFYDATE" ColumnName="MODIFYDATE" />
+          <ScalarProperty Name="EMAILCONFIRM" ColumnName="EMAILCONFIRM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERROLEs">
+      <EntityTypeMapping TypeName="Model.USERROLE">
+        <MappingFragment StoreEntitySet="USERROLE">
+          <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+          <ScalarProperty Name="ROLENAME" ColumnName="ROLENAME" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="USERBYROLE" TypeName="Model.USERBYROLE" StoreEntitySet="USERBYROLE">
+      <EndProperty Name="USERROLE">
+        <ScalarProperty Name="ROLEID" ColumnName="ROLEID" />
+      </EndProperty>
+      <EndProperty Name="USERINFORMATION">
+        <ScalarProperty Name="USERID" ColumnName="USERID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

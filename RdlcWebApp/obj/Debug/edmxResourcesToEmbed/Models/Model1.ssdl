@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BRANCHINFO">
+    <Key>
+      <PropertyRef Name="BRC" />
+    </Key>
+    <Property Name="GMOID" Type="varchar2" MaxLength="5" />
+    <Property Name="GMOCODE" Type="varchar2" MaxLength="7" />
+    <Property Name="POROPREFIX" Type="varchar2" MaxLength="2" />
+    <Property Name="PORONAME" Type="varchar2" MaxLength="60" />
+    <Property Name="CORP" Type="varchar2" MaxLength="1" />
+    <Property Name="BRC" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="BRNAME" Type="varchar2" MaxLength="60" />
+    <Property Name="DISTRICT_CODE" Type="varchar2" MaxLength="2" />
+    <Property Name="DISTRICT_NAME" Type="varchar2" MaxLength="60" />
+    <Property Name="ROUTINGNO" Type="varchar2" MaxLength="10" />
+    <Property Name="GMONAME" Type="varchar2" MaxLength="15" />
+    <Property Name="POROCODE" Type="varchar2" MaxLength="5" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="1" />
+    <Property Name="BRLOCATION" Type="varchar2" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SBL_COUNTRY">
+    <Key>
+      <PropertyRef Name="COUNTRYCODE" />
+    </Key>
+    <Property Name="COUNTRYCODE" Type="varchar2" MaxLength="11" Nullable="false" />
+    <Property Name="ISO" Type="varchar2" MaxLength="5" />
+    <Property Name="COUNTRYNAME" Type="varchar2" MaxLength="80" />
+    <Property Name="NICENAME" Type="varchar2" MaxLength="80" />
+    <Property Name="ISO3" Type="varchar2" MaxLength="5" />
+    <Property Name="NUMCODE" Type="number" Precision="6" Scale="0" />
+    <Property Name="PHONECODE" Type="number" Precision="5" Scale="0" />
+  </EntityType>
+  <EntityType Name="SBL_DESIGINFO">
+    <Key>
+      <PropertyRef Name="DESCODE" />
+    </Key>
+    <Property Name="DESCODE" Type="varchar2" MaxLength="4" Nullable="false" />
+    <Property Name="DESNAME" Type="varchar2" MaxLength="100" />
+    <Property Name="DESSHORTNAME" Type="varchar2" MaxLength="30" />
+    <Property Name="DESTYPE" Type="varchar2" MaxLength="1" />
+    <Property Name="COMMENTS" Type="varchar2" MaxLength="100" />
+    <Property Name="STATUS" Type="varchar2" MaxLength="1" />
+    <Property Name="ENTRYID" Type="varchar2" MaxLength="100" />
+    <Property Name="ENTRYDATE" Type="date" />
+  </EntityType>
+  <EntityType Name="SBL_INDX_MOBILE">
+    <Key>
+      <PropertyRef Name="INDEXNO" />
+    </Key>
+    <Property Name="INDEXNO" Type="nvarchar2" MaxLength="8" Nullable="false" />
+    <Property Name="MOBILENO" Type="nvarchar2" MaxLength="16" />
+  </EntityType>
+  <EntityType Name="USERBYROLE">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="USERID" Type="number" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ROLEID" Type="number" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USERINFORMATION">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="INDEXNO" Type="nvarchar2" MaxLength="50" />
+    <Property Name="PASSWORD" Type="nvarchar2" MaxLength="256" />
+    <Property Name="ROLESID" Type="number" Precision="38" Scale="0" />
+    <Property Name="FIRSTNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="LASTNAME" Type="nvarchar2" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="50" />
+    <Property Name="ACTIVATIONCODE" Type="varchar2" MaxLength="256" />
+    <Property Name="BRCODE" Type="varchar2" MaxLength="256" />
+    <Property Name="VERIFICATIONKEY" Type="varchar2" MaxLength="256" />
+    <Property Name="SECURITYSTAMP" Type="varchar2" MaxLength="256" />
+    <Property Name="COUNTRYCODE" Type="varchar2" MaxLength="50" />
+    <Property Name="DESIGNATIONID" Type="varchar2" MaxLength="4" />
+    <Property Name="CONTRACTNO" Type="varchar2" MaxLength="20" />
+    <Property Name="NID" Type="number" Precision="38" Scale="0" />
+    <Property Name="SMARTID" Type="number" Precision="38" Scale="0" />
+    <Property Name="EMPPICPATH" Type="varchar2" MaxLength="100" />
+    <Property Name="SIGNATUREPATH" Type="varchar2" MaxLength="100" />
+    <Property Name="BIOMETRICAUTH" Type="varchar2" MaxLength="100" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="ISACTIVE" Type="char" MaxLength="1" />
+    <Property Name="APPROVEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="APPROVEDATE" Type="date" />
+    <Property Name="DELETEBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="DELETEDATE" Type="date" />
+    <Property Name="MODIFYBY" Type="nvarchar2" MaxLength="20" />
+    <Property Name="MODIFYDATE" Type="date" />
+    <Property Name="EMAILCONFIRM" Type="number" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="USERROLE">
+    <Key>
+      <PropertyRef Name="ROLEID" />
+    </Key>
+    <Property Name="ROLEID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ROLENAME" Type="varchar2" MaxLength="20" />
+    <Property Name="ISACTIVE" Type="char" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK_USERBYROLE_ROLEID">
+    <End Role="USERROLE" Type="Self.USERROLE" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="USERBYROLE" Type="Self.USERBYROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERROLE">
+        <PropertyRef Name="ROLEID" />
+      </Principal>
+      <Dependent Role="USERBYROLE">
+        <PropertyRef Name="ROLEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERBYROLE_USERID">
+    <End Role="USERINFORMATION" Type="Self.USERINFORMATION" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="USERBYROLE" Type="Self.USERBYROLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERINFORMATION">
+        <PropertyRef Name="USERID" />
+      </Principal>
+      <Dependent Role="USERBYROLE">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BRANCHINFO" EntityType="Self.BRANCHINFO" Schema="SONALIERP" store:Type="Tables" />
+    <EntitySet Name="SBL_COUNTRY" EntityType="Self.SBL_COUNTRY" Schema="SONALIERP" store:Type="Tables" />
+    <EntitySet Name="SBL_DESIGINFO" EntityType="Self.SBL_DESIGINFO" Schema="SONALIERP" store:Type="Tables" />
+    <EntitySet Name="SBL_INDX_MOBILE" EntityType="Self.SBL_INDX_MOBILE" Schema="SONALIERP" store:Type="Tables" />
+    <EntitySet Name="USERBYROLE" EntityType="Self.USERBYROLE" Schema="SONALIERP" store:Type="Tables" />
+    <EntitySet Name="USERINFORMATION" EntityType="Self.USERINFORMATION" Schema="SONALIERP" store:Type="Tables" />
+    <EntitySet Name="USERROLE" EntityType="Self.USERROLE" Schema="SONALIERP" store:Type="Tables" />
+    <AssociationSet Name="FK_USERBYROLE_ROLEID" Association="Self.FK_USERBYROLE_ROLEID">
+      <End Role="USERROLE" EntitySet="USERROLE" />
+      <End Role="USERBYROLE" EntitySet="USERBYROLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERBYROLE_USERID" Association="Self.FK_USERBYROLE_USERID">
+      <End Role="USERINFORMATION" EntitySet="USERINFORMATION" />
+      <End Role="USERBYROLE" EntitySet="USERBYROLE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
